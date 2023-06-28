@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp_devoir_groupe3/view_models/app_view_model.dart';
 import 'package:todoapp_devoir_groupe3/views/bottom_sheets/add_task_bottom_sheet_view.dart';
@@ -23,6 +24,7 @@ class AddTaskView extends StatelessWidget {
             elevation: 0
           ),
           onPressed: () {
+            HapticFeedback.heavyImpact();
             viewModel.bottomSheetBuilder(const AddTaskBottomSheetView(), context);
           },
           child: const Icon(Icons.add, size: 30,),),
