@@ -40,6 +40,14 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void deleteAllTasks(){
+    tasks.clear();
+    notifyListeners();
+  }
+  void deleteCompletedTasks(){
+    tasks = tasks.where((task) => !task.completed).toList();
+    notifyListeners();
+  }
 
   void bottomSheetBuilder(Widget bottomSheetView, BuildContext context) {
     showModalBottomSheet(

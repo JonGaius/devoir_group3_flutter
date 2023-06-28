@@ -9,8 +9,9 @@ class TaskListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppViewModel>(builder: (context, viewModel, child) {
       return Container(
+        padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-          color: viewModel.colorWhite
+          color: viewModel.colorWhite,
         ),
         child: ListView.separated(
             padding: const EdgeInsets.all(20),
